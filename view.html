@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>MVC Search</title>
+</head>
+<link rel="stylesheet" type="text/css" href="styles.css">
+
+<body>
+
+	<h2>Search for actors,roles,movies in the database imdb_small</h2>
+	<br>
+	<br> Search string
+	<br>
+	<input type="text" id="inp">
+	<br>
+	<br>
+	<input type="button" name="srh" value="Actors"
+		onclick="comunicate('Actors')">
+	<input type="button" name="srh" value="Movies"
+		onclick="comunicate('Movies')">
+	<input type="button" name="srh" value="Roles"
+		onclick="comunicate('Roles')">
+	<br>
+	<br>
+
+
+	<div id="change"></div>
+
+	<script>
+		function comunicate(catg) {
+			var change = document.getElementById("change");
+			var x = document.getElementById("inp");
+
+			//change.innerHTML = catg;
+			var ajax = new XMLHttpRequest();
+			ajax.open("GET", "controller.php?srh=" + x.value + "&catg=" + catg,
+					true);
+			ajax.send();
+
+			ajax.onreadystatechange = function() {
+				if (ajax.readyState == 4 && ajax.status == 200) {
+
+					var respon = ajax.responseText;
+					//change.innerHTML += respon;
+					var res = JSON.parse(ajax.responseText);
+					var disply = "<b>" + catg + "</b><br><br><table>";
+
+					for (var i = 0; i < res.length; i++) {
+						if (catg == "Movies") {
+							disply += "<tr><td>" + res[i].name + "</tr></td>";
+						} else if (catg == "Roles") {
+							disply += "<tr><td>" + res[i].role + "</tr></td>";
+						} else if (catg == "Actors") {
+							disply += "<tr><td>" + res[i].first_name + " "
+									+ res[i].last_name + "</tr></td>";
+						}
+
+					}
+					;
+					disply += "</table>";
+					change.innerHTML = disply;
+
+					if (res.length == 0) {
+						change.innerHTML = "No matches for '" + x.value + "'";
+					}
+					;
+				}
+			};
+		}
+	</script>
+
+
+</body>
+</html>
