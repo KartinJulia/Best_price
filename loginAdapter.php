@@ -1,7 +1,7 @@
 
 <?php
 
-class DatabaseAdaptor {
+class LoginAdapter {
     private $DB; // The instance variable used in every method
     // Connect to an existing data based named 'first'
     public function __construct() {
@@ -23,8 +23,8 @@ class DatabaseAdaptor {
     } // . . .
     // Use a different database
 
-    public function getItem ($item) {
-        $stmt = $this->DB->prepare( "SELECT * FROM second;");
+    public function getUser($userName,$passWord) {
+        $stmt = $this->DB->prepare( "SELECT * FROM users WHERE account IN ('" . $userName . "') AND password IN ('" . $passWord . "');");
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }

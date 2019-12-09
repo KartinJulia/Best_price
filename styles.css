@@ -1,18 +1,20 @@
 @charset "UTF-8";
+/* styles.css */
+.mainbody{
+   text-align: center;
+ }
 
-table {
-  font-family: arial, sans-serif;
-  border-collapse: collapse;
-  width: 20%;
-}
+ .login_body{
+   font: 14px sans-serif;
 
-td{
-  border: 1px solid #dddddd;
-  text-align: left;
-  padding: 8px;
+  }
 
-}
+ .wrapper{
+   width: 350px;
+  padding: 20px;
+  margin-left: 200px;
+   }
 
-tr:nth-child(even) {
-  background-color: #dddddd;
+a{
+  position:left;
 }

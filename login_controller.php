@@ -1,11 +1,11 @@
 <?php
-include "DatabaseAdapter.php";
-$theDBA = new DatabaseAdaptor();
+include "loginAdapter.php";
+$theDBA = new LoginAdapter();
 // $userName = $_GET["userName"];
 // $passWord = $_GET["passWord"];
-$item = $_GET["item"];
-
-$arr = $theDBA->getItem($item);
+$userName = $_GET["userName"];
+$passWord = $_GET["passWord"];
+$arr = $theDBA->getUser($userName,$passWord);
 
 // if ($catg == 'Actors'){
 //     $arr = $theDBA->getActors($srh);
@@ -15,7 +15,4 @@ $arr = $theDBA->getItem($item);
 //     $arr = $theDBA->getRoles($srh);
 // }
 echo json_encode($arr);
-
-
-
 ?>
