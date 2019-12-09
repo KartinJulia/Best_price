@@ -15,8 +15,9 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     <meta charset="UTF-8">
     <title>Best Price Main</title>
 
-  
-    <link rel="stylesheet"  type="text/css"  href="./styles.css">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="styles.css">
 
 </head>
 <body>

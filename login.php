@@ -92,11 +92,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <meta charset="UTF-8">
     <title>Login</title>
 
-
-    <link href="./styles.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="styles.css">
 
 </head>
-<body class="login_body">
+<body>
+
     <div class="wrapper">
         <h2>Best Price Login</h2>
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
@@ -115,6 +116,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             </div>
             <p>Don't have an account? <a href="register.php">Sign up now</a>.</p>
         </form>
+    <a href="view.thml">Use without login?<a>
     </div>
+
+
+
 </body>
 </html>

@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <title>Best Price</title>
 </head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
 <link rel="stylesheet" type="text/css" href="styles.css">
 
 <body>
