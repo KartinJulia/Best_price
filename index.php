@@ -131,12 +131,14 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
    					      "<th scope='col'>Model</th>" +
    					      "<th scope='col'>Price</th>" +
    					      "<th scope='col'>Condition</th>" +
+                  "<th scope='col'>Buyer</th>" +
    					    	"</tr>" +
    					  		"</thead>";
    					//test.innerHTML = respon;
    					for (var i = 0; i < res.length; i++) {
    							disply += "<tr><td>" + res[i].brand + "</td><td>" + res[i].model +
-   							 "</td><td>" + res[i].price + "</td><td>" + res[i].conditions + "</tr></td>";
+   							 "</td><td>" + res[i].price + "</td><td>" + res[i].conditions +
+                 "</td><td>" + res[i].username + "</tr></td>";
    						};
              disply += "</table>";
              change.innerHTML = disply;

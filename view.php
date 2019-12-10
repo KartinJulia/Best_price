@@ -64,7 +64,7 @@ Jialiang Wang -->
 					//test.innerHTML = respon;
 					for (var i = 0; i < res.length; i++) {
 							disply += "<tr><td>" + res[i].brand + "</td><td>" + res[i].model +
-							 "</td><td>" + res[i].price + "</td><td>" + res[i].conditions + "</tr></td>";
+							 "</td><td>" + res[i].price + "</td><td>" + res[i].conditions +"</tr></td>";
 						};
 					disply += "</table>";
 					change.innerHTML = disply;
