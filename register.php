@@ -101,6 +101,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
+  <br>
+  <img src="BestPriceIcon.png" alt="Best Price Icon" height="50" width="200" class="icon">
     <div class="wrapper">
         <h2>Sign Up</h2>
         <p>Please fill this form to create an account.</p>

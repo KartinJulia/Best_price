@@ -22,7 +22,8 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 <body>
 
     <div class="page-header">
-        <h3><img src="BestPriceIcon.png" alt="Best Price Icon" height="50" width="200"> will gve you the <b>Be$t Price !</b></h3>
+      <img src="BestPriceIcon.png" alt="Best Price Icon" height="50" width="200">
+        <h3 class="slogan">Gives you the <b>Be$t Price !</b></h3>
     </div>
     <div class="welcome">
       Welcome <b><?php echo htmlspecialchars($_SESSION["username"]); ?></b>
@@ -99,15 +100,16 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     <div class="wrapper">
      <h2>Search Buyer's Post</h2>
      <br>
-     <input type="text" id="inp">
-     <br>
-     <br>
-     <input type="button" class="btn btn-primary" name="item" value="Search"
-       onclick="comunicate()">
-     <br>
-     <br>
-     <div id="change"></div>
+     <form onsubmit="comunicate();return false">
+   	<input type="text" id="inp" class="form-control" required>
+   	<br>
+   	<input type="submit" class="btn btn-primary" name="item" value="Search">
+   	<br>
+   </form>
+
      </div>
+     <div id="change" class="table_wrappper"></div>
+
      <div id="test"></div>
      <script>
        function comunicate() {
@@ -124,13 +126,18 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
             //test.innerHTML = respon;
              //change.innerHTML += respon;
              var res = JSON.parse(ajax.responseText);
-             var disply = "<br><table>";
-
-             for (var i = 0; i < res.length; i++) {
-                 disply += "<tr><td>" + res[i].brand + "|" + res[i].model +
-                  "|" + res[i].price + "|" + res[i].conditions + "|" +
-                   res[i].username + "</tr></td>";
-               };
+             var disply = "<br><table class='table table-dark'><thead><tr>" +
+         					"<th scope='col'>Brand</th>" +
+   					      "<th scope='col'>Model</th>" +
+   					      "<th scope='col'>Price</th>" +
+   					      "<th scope='col'>Condition</th>" +
+   					    	"</tr>" +
+   					  		"</thead>";
+   					//test.innerHTML = respon;
+   					for (var i = 0; i < res.length; i++) {
+   							disply += "<tr><td>" + res[i].brand + "</td><td>" + res[i].model +
+   							 "</td><td>" + res[i].price + "</td><td>" + res[i].conditions + "</tr></td>";
+   						};
              disply += "</table>";
              change.innerHTML = disply;
              if (res.length == 0) {

@@ -2,30 +2,22 @@
 Jialiang Wang */
 
 @charset "UTF-8";
-/* styles.css */
 
-table {
-  font-family: arial, sans-serif;
-  border-collapse: collapse;
-  width: 50%;
-}
-
-td{
-  border: 1px solid #dddddd;
-  text-align: left;
-  padding: 8px;
-
-}
-
-tr:nth-child(even) {
-  background-color: #dddddd;
-}
-
-body{background-image: url("round.png");
+body{
+  background-image: url("round.png");
  }
 
+h2{
+  font-style: sans-serif;
+}
 
- .wrapper{
+.table_wrappper{
+  width: 600px;
+  position: absolute;
+  margin-left: 28%;
+}
+
+.wrapper{
    width: 600px;
   padding: 20px;
   margin-left: 35%;
@@ -35,6 +27,16 @@ body{background-image: url("round.png");
   text-align: center;
 }
 
+.user{
+  position: absolute;
+  margin-left: 80%;
+  margin-top: 2%;
+}
+
+.icon{
+  margin-left: 40%;
+}
+
 .form-control{
   width: 300px;
 }
@@ -42,4 +44,8 @@ body{background-image: url("round.png");
 .welcome{
   font: 30px sans-serif;
   text-align: center;
+}
+
+.slogan{
+  font-family: cursive; font-size: 24px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 26.4px;
 }

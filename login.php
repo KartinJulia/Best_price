@@ -100,9 +100,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
 </head>
 <body>
-
+  <br>
+<img src="BestPriceIcon.png" alt="Best Price Icon" height="50" width="200" class="icon">
     <div class="wrapper">
-        <h2>Best Price Login</h2>
+        <h2>Login</h2>
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
             <div class="form-group <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
                 <label>Username</label>

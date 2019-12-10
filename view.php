@@ -10,26 +10,29 @@ Jialiang Wang -->
 <link rel="stylesheet" type="text/css" href="styles.css">
 
 <body>
-	<h3 class ="page-header"><img src="BestPriceIcon.png" alt="Best Price Icon" height="50" width="200"> will gve you the <b>Be$t Price !</b></h3>
+
+	<div class="user">
+		<a href="register.php" class="btn btn-warning">SignUp</a>
+		<a href="login.php" class="btn btn-warning">Login</a>
+	</div>
+	<div class="page-header">
+		<img src="BestPriceIcon.png" alt="Best Price Icon" height="50" width="200">
+			<h3 class="slogan">Gives you the <b>Be$t Price !</b></h3>
+	</div>
  <div class="wrapper">
 
-	<a href="register.php" class="btn btn-warning">SignUp</a>
- 	<a href="login.php" class="btn btn-warning">Login</a>
 	<h2>Search Buyer's Post</h2>
 	<br>
-	<input type="text" id="inp">
+	<form onsubmit="comunicate();return false">
+	<input type="text" id="inp" class="form-control" required>
 	<br>
+	<input type="submit" class="btn btn-primary" name="item" value="Search">
 	<br>
-	<input type="button" class="btn btn-primary" name="item" value="Search"
-		onclick="comunicate()">
-
-
-	<br>
-	<br>
-
-
-	<div id="change"></div>
+</form>
 	</div>
+
+	<div id="change" class="table_wrappper"></div>
+
 	<div id="test"></div>
 	<script>
 		function comunicate() {
@@ -51,11 +54,17 @@ Jialiang Wang -->
 					//test.innerHTML = respon;
 					//change.innerHTML += respon;
 					var res = JSON.parse(respon);
-					var disply = "<br><table>";
+					var disply = "<br><table class='table table-dark'><thead><tr>" +
+      					"<th scope='col'>Brand</th>" +
+					      "<th scope='col'>Model</th>" +
+					      "<th scope='col'>Price</th>" +
+					      "<th scope='col'>Condition</th>" +
+					    	"</tr>" +
+					  		"</thead>";
 					//test.innerHTML = respon;
 					for (var i = 0; i < res.length; i++) {
-							disply += "<tr><td>" + res[i].brand + "|" + res[i].model +
-							 "|" + res[i].price + "|" + res[i].conditions + "</tr></td>";
+							disply += "<tr><td>" + res[i].brand + "</td><td>" + res[i].model +
+							 "</td><td>" + res[i].price + "</td><td>" + res[i].conditions + "</tr></td>";
 						};
 					disply += "</table>";
 					change.innerHTML = disply;
