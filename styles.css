@@ -24,19 +24,23 @@ tr:nth-child(even) {
 
  .login_body{
    font: 14px sans-serif;
-
   }
 
  .wrapper{
    width: 600px;
   padding: 20px;
-  margin-left: 200px;
+  margin-left: 35%;
    }
 
-a{
-  position:left;
+.page-header{
+  text-align: center;
 }
 
 .form-control{
   width: 300px;
+}
+
+.welcome{
+  font: 30px sans-serif;
+  text-align: center;
 }

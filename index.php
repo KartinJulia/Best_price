@@ -14,18 +14,17 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 <head>
     <meta charset="UTF-8">
     <title>Best Price Main</title>
-
-
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="styles.css">
-
 </head>
 <body>
 
     <div class="page-header">
-        <h1>Welcome <b><?php echo htmlspecialchars($_SESSION["username"]); ?></b>! <b>Best Price</b> will gve you the <b>Best Price</b></h1>
+        <h2><b>Be$t Price</b> will gve you the <b>Be$t Price !</b></h2>
     </div>
-    <div class="wrapper">
+    <div class="welcome">
+      Welcome <b><?php echo htmlspecialchars($_SESSION["username"]); ?></b>
+  
     <p>
         <a href="reset_password.php" class="btn btn-warning">Reset Your Password</a>
         <a href="logout.php" class="btn btn-danger">Sign Out of Your Account</a>
@@ -40,23 +39,22 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
       <form action="post_controller.php" method="get">
 
         <div class="form-group">
-        Brand:<input type="text" name="brand" class="form-control">
+        Brand:<input type="text" name="brand" class="form-control" required>
         </div>
         <div class="form-group">
-        Model:<input type="text" name="model" class="form-control">
+        Model:<input type="text" name="model" class="form-control" required>
       </div>
       <div class="form-group">
-        Price:<input type="text" name="price" class="form-control">
+        Price:<input type="text" name="price" class="form-control" required>
       </div>
       <div class="form-group">
-        Condition:&nbsp;&nbsp;&nbsp;<select name="conditions" class="btn btn-secondary dropdown-toggle">
+        Condition:&nbsp;&nbsp;&nbsp;<select name="conditions" class="btn btn-secondary dropdown-toggle" required>
           <option value="good">Good</option>
           <option value="acceptable">Acceptable</option>
           <option value="brandnew">Brand New</option>
           <option value="bad">Bad</option>
           <option value="broken">Broken</option>
-        </select>
-
+         </select>
       </div>
         <input type="submit" class="btn btn-primary" value="Post">
       </form>

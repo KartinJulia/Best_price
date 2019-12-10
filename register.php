@@ -81,11 +81,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 echo "Something went wrong. Please try again later.";
             }
         }
-
         // Close statement
         unset($stmt);
     }
-
     // Close connection
     unset($pdo);
 }
