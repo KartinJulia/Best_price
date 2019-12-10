@@ -1,5 +1,23 @@
 @charset "UTF-8";
 /* styles.css */
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 50%;
+}
+
+td{
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
 .mainbody{
    text-align: center;
  }
@@ -10,7 +28,7 @@
   }
 
  .wrapper{
-   width: 350px;
+   width: 600px;
   padding: 20px;
   margin-left: 200px;
    }

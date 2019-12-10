@@ -24,7 +24,13 @@ class DatabaseAdaptor {
     // Use a different database
 
     public function getItem ($item) {
-        $stmt = $this->DB->prepare( "SELECT * FROM second;");
+        $stmt = $this->DB->prepare( "SELECT * FROM items WHERE brand LIKE('%$item%') OR model LIKE('%$item%');");
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public function postItem ($brand,$model,$price,$conditions) {
+        $stmt = $this->DB->prepare( "INSERT INTO items (brand,model,price,conditions) VALUES ('$brand', '$model', '$price', '$conditions');");
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }

@@ -8,24 +8,27 @@
 <link rel="stylesheet" type="text/css" href="styles.css">
 
 <body>
-
+	<a href="register.php" class="btn btn-warning">SignUp</a>
+	<a href="login.php" class="btn btn-warning">Login</a>
+ <div class="wrapper">
 	<h2>Search Buyer's Post</h2>
 	<br>
+	
+
 
 	<input type="text" id="inp">
 	<br>
 	<br>
-	<input type="button" name="item" value="Search"
+	<input type="button" class="btn btn-primary" name="item" value="Search"
 		onclick="comunicate()">
+
+
 	<br>
 	<br>
 
-	<a href="login.html">Login<a>
-		<br>
-		    <br>
-	<a href="./register.php?mode=login">Register<a>
 
 	<div id="change"></div>
+	</div>
 	<div id="test"></div>
 	<script>
 		function comunicate() {
@@ -44,13 +47,14 @@
 				if (ajax.readyState == 4 && ajax.status == 200) {
 
 					var respon = ajax.responseText;
-					test.innerHTML = respon;
+					// test.innerHTML = respon;
 					//change.innerHTML += respon;
 					var res = JSON.parse(ajax.responseText);
 					var disply = "<br><table>";
 
 					for (var i = 0; i < res.length; i++) {
-							disply += "<tr><td>" + res[i].description + "</tr></td>";
+							disply += "<tr><td>" + res[i].brand + "|" + res[i].model +
+							 "|" + res[i].price + "|" + res[i].conditions + "</tr></td>";
 						};
 					disply += "</table>";
 					change.innerHTML = disply;

@@ -1,3 +1,4 @@
+
 <?php
 include "DatabaseAdapter.php";
 $theDBA = new DatabaseAdaptor();
