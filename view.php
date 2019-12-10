@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+<!-- Jiatian Wang
+Jialiang Wang -->
 <html>
 <head>
 <meta charset="UTF-8">
@@ -8,14 +10,13 @@
 <link rel="stylesheet" type="text/css" href="styles.css">
 
 <body>
-	<a href="register.php" class="btn btn-warning">SignUp</a>
-	<a href="login.php" class="btn btn-warning">Login</a>
+	<h3 class ="page-header"><img src="BestPriceIcon.png" alt="Best Price Icon" height="50" width="200"> will gve you the <b>Be$t Price !</b></h3>
  <div class="wrapper">
+
+	<a href="register.php" class="btn btn-warning">SignUp</a>
+ 	<a href="login.php" class="btn btn-warning">Login</a>
 	<h2>Search Buyer's Post</h2>
 	<br>
-	
-
-
 	<input type="text" id="inp">
 	<br>
 	<br>
@@ -47,20 +48,17 @@
 				if (ajax.readyState == 4 && ajax.status == 200) {
 
 					var respon = ajax.responseText;
-					// test.innerHTML = respon;
+					//test.innerHTML = respon;
 					//change.innerHTML += respon;
-					var res = JSON.parse(ajax.responseText);
+					var res = JSON.parse(respon);
 					var disply = "<br><table>";
-
+					//test.innerHTML = respon;
 					for (var i = 0; i < res.length; i++) {
 							disply += "<tr><td>" + res[i].brand + "|" + res[i].model +
 							 "|" + res[i].price + "|" + res[i].conditions + "</tr></td>";
 						};
 					disply += "</table>";
 					change.innerHTML = disply;
-
-
-
 					if (res.length == 0) {
 						change.innerHTML = "No matches for '" + x.value + "'";
 					}

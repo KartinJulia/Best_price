@@ -1,7 +1,9 @@
 <?php
+// Jiatian Wang
+// Jialiang Wang
+
 // Initialize the session
 session_start();
-
 // Check if the user is logged in, if not then redirect him to login page
 if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     header("location: login.php");
@@ -20,11 +22,11 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 <body>
 
     <div class="page-header">
-        <h2><b>Be$t Price</b> will gve you the <b>Be$t Price !</b></h2>
+        <h3><img src="BestPriceIcon.png" alt="Best Price Icon" height="50" width="200"> will gve you the <b>Be$t Price !</b></h3>
     </div>
     <div class="welcome">
       Welcome <b><?php echo htmlspecialchars($_SESSION["username"]); ?></b>
-  
+
     <p>
         <a href="reset_password.php" class="btn btn-warning">Reset Your Password</a>
         <a href="logout.php" class="btn btn-danger">Sign Out of Your Account</a>
@@ -34,7 +36,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 
 <!-- Post deal -->
     <div class="wrapper">
-      <h2>Post Your Deal</h2>
+      <h2>What you want to buy?</h2>
 
       <form action="post_controller.php" method="get">
 
@@ -48,7 +50,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
         Price:<input type="text" name="price" class="form-control" required>
       </div>
       <div class="form-group">
-        Condition:&nbsp;&nbsp;&nbsp;<select name="conditions" class="btn btn-secondary dropdown-toggle" required>
+        Acceptable Condition:&nbsp;&nbsp;&nbsp;<select name="conditions" class="btn btn-secondary dropdown-toggle" required>
           <option value="good">Good</option>
           <option value="acceptable">Acceptable</option>
           <option value="brandnew">Brand New</option>
@@ -119,14 +121,15 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
          ajax.onreadystatechange = function() {
            if (ajax.readyState == 4 && ajax.status == 200) {
              var respon = ajax.responseText;
-             // test.innerHTML = respon;
+            //test.innerHTML = respon;
              //change.innerHTML += respon;
              var res = JSON.parse(ajax.responseText);
              var disply = "<br><table>";
 
              for (var i = 0; i < res.length; i++) {
                  disply += "<tr><td>" + res[i].brand + "|" + res[i].model +
-                  "|" + res[i].price + "|" + res[i].conditions + "</tr></td>";
+                  "|" + res[i].price + "|" + res[i].conditions + "|" +
+                   res[i].username + "</tr></td>";
                };
              disply += "</table>";
              change.innerHTML = disply;

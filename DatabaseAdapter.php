@@ -1,6 +1,6 @@
-
 <?php
-
+// Jiatian Wang
+// Jialiang Wang
 class DatabaseAdaptor {
     private $DB; // The instance variable used in every method
     // Connect to an existing data based named 'first'
@@ -24,7 +24,7 @@ class DatabaseAdaptor {
     // Use a different database
 
     public function getItem ($item) {
-        $stmt = $this->DB->prepare( "SELECT * FROM items WHERE brand LIKE('%$item%') OR model LIKE('%$item%');");
+        $stmt = $this->DB->prepare( "SELECT items.brand, items.model, items.price, items.conditions, users.username FROM items JOIN users ON users.user_id = items.buyer_id WHERE items.brand LIKE('%$item%') OR items.model LIKE('%$item%');");
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }

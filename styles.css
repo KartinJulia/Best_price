@@ -1,3 +1,6 @@
+/* Jiatian Wang
+Jialiang Wang */
+
 @charset "UTF-8";
 /* styles.css */
 
@@ -18,13 +21,9 @@ tr:nth-child(even) {
   background-color: #dddddd;
 }
 
-.mainbody{
-   text-align: center;
+body{background-image: url("round.png");
  }
 
- .login_body{
-   font: 14px sans-serif;
-  }
 
  .wrapper{
    width: 600px;
