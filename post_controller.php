@@ -50,7 +50,7 @@ $conn->close();
 </div>
 
 <div class="welcome">
-<a href="index.php" >Return</a>
+<a href="index.php">Return</a>
 </div>
 
 </body>
