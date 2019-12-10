@@ -34,19 +34,32 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 
 
 <!-- Post deal -->
-
     <div class="wrapper">
       <h2>Post Your Deal</h2>
 
       <form action="post_controller.php" method="get">
-        Brand:<input type="text" name="brand"><br>
-        Model:<input type="text" name="model"><br>
-        Price:<input type="text" name="price"><br>
-        Condition:<input type="text" name="conditions"><br>
+
+        <div class="form-group">
+        Brand:<input type="text" name="brand" class="form-control">
+        </div>
+        <div class="form-group">
+        Model:<input type="text" name="model" class="form-control">
+      </div>
+      <div class="form-group">
+        Price:<input type="text" name="price" class="form-control">
+      </div>
+      <div class="form-group">
+        Condition:&nbsp;&nbsp;&nbsp;<select name="conditions" class="btn btn-secondary dropdown-toggle">
+          <option value="good">Good</option>
+          <option value="acceptable">Acceptable</option>
+          <option value="brandnew">Brand New</option>
+          <option value="bad">Bad</option>
+          <option value="broken">Broken</option>
+        </select>
+
+      </div>
         <input type="submit" class="btn btn-primary" value="Post">
       </form>
-      <div id="post_res">post result</div>
-
     </div>
 
 <!-- <script>

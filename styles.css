@@ -36,3 +36,7 @@ tr:nth-child(even) {
 a{
   position:left;
 }
+
+.form-control{
+  width: 300px;
+}

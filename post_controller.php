@@ -3,11 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Best Price Main</title>
-
-
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="styles.css">
-
 </head>
 <body>
 
@@ -15,10 +12,7 @@
 <?php
 include "DatabaseAdapter.php";
 $theDBA = new DatabaseAdaptor();
-// $userName = $_GET["userName"];
-// $passWord = $_GET["passWord"];
 
-//$username = $_GET["username"]
 $brand = $_GET["brand"];
 $model = $_GET["model"];
 $price = $_GET["price"];
