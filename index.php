@@ -63,38 +63,6 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
       </form>
     </div>
 
-<!-- <script>
-    function post(){
-
-      var post_res = document.getElementById("post_res");
-      post_res.innerHTML = "0";
-
-      var brand = document.getElementById("brand");
-      var model = document.getElementById("model");
-      var price = document.getElementById("price");
-      var conditions = document.getElementById("conditions");
-      post_res.innerHTML = "1";
-      var ajax = new XMLHttpRequest();
-      post_res.innerHTML = "2";
-      ajax.open("GET", "post_controller.php?brand=" + brand.value + "&model=" + model.value + "&price=" + price.value + "&conditions=" + conditions.value,
-          true);
-      post_res.innerHTML = "3";
-      ajax.send();
-      post_res.innerHTML = "4";
-      ajax.onreadystatechange = function() {
-        if (ajax.readyState == 4 && ajax.status == 200) {
-          var respon = ajax.responseText;
-          var res = JSON.parse(ajax.responseText);
-
-          post_res.innerHTML = res;
-
-          post_res.innerHTML = "5";
-        }
-      };
-    }
-    </script> -->
-
-
 
  <!-- Search deal -->
     <div class="wrapper">
